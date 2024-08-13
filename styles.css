@@ -1,0 +1,104 @@
+#tiles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 420px; /* Adjust width to fit 21 tiles */
+}
+
+.tile {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    margin: 2px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+
+.tile.moving {
+    background-color: #00FF00;
+}
+
+.tile.cutting {
+    border: 2px dashed #FF0000; /* Red dashed border for cut tile */
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(15, 40px);
+    grid-template-rows: repeat(15, 40px);
+    gap: 1px;
+    margin-top: 20px;
+}
+
+.board-cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.board-cell.blank {
+    background-color: #FFFFFF;
+}
+
+.board-cell.tiled {
+    background-color: #FFFF00;
+}
+
+.board-cell.highlight {
+    border: 2px solid #00FF00;
+}
+
+.board-cell.highlight.cut {
+    background-color: #FFDDDD; /* Light red background for cell with cut tile */
+}
+
+.selected {
+    background-color: #ADD8E6; /* Light blue to indicate selection */
+}
+
+/* New styles for arrow buttons */
+#arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px; /* Adjust spacing from the board */
+}
+
+.arrow-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    background-color: #CCCCCC;
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+    margin: 2px 0;
+}
+
+.arrow-button:hover {
+    background-color: #AAAAAA;
+}
+
+.arrow-button.up {
+    border-radius: 4px 4px 0 0;
+}
+
+.arrow-button.down {
+    border-radius: 0 0 4px 4px;
+}
+
+.arrow-button.left,
+.arrow-button.right {
+    border-radius: 4px;
+}
